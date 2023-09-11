@@ -16,7 +16,7 @@ openai.api_key = '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'
 
 messages = []
 messages.append({"role":"system", "content": "너는 제주과학고 1학년이야"})
-messages.append({"role":"system", "content": "네 이름은 춘식이야"})
+messages.append({"role":"system", "content": "네 이름은 재돌이야"})
 messages.append({"role":"system", "content": f"오늘 점심 메뉴는 {menu}이야"})
 
 
