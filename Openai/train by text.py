@@ -2,6 +2,7 @@ import openai
 from urllib.request import urlopen
 from datetime import date
 from bs4 import BeautifulSoup
+import json
 
 today = date.today().strftime("%Y/%m/%d")
 html = urlopen(f"https://jeju-s.jje.hs.kr/jeju-s/food/{today}/lunch")
@@ -12,13 +13,14 @@ for m in lunch:
     menu=m.text.strip().split(" ")
 
 
-openai.api_key = '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'
+openai.api_key = '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'
+
+with open(aitext.txt, 'r', encoding='utf-8') as f:
+    aitext=f.read
+aitext = aitext.replace("\n", "").replace("\r", "")
 
 messages = []
-messages.append({"role":"system", "content": "너는 제주과학고 1학년이야"})
-messages.append({"role":"system", "content": "네 이름은 재돌이야"})
-messages.append({"role":"system", "content": f"오늘 점심 메뉴는 {menu}이야"})
-
+messages.append({"role": "user", "content": aitext})
 
 # messages.append({"role":"system", "content": ""})
 # messages.append({"role":"user", "content": ""})
